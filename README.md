@@ -1,5 +1,9 @@
 # VisualTrans
 
+<p align="center">
+  <img src="assets/teaser.png" alt="VisualTrans Framework Overview" width="800"/>
+</p>
+
 A comprehensive framework for generating and evaluating visual transformation benchmarks across multiple task types including quantitative, procedural, and spatial transformation.
 
 ## Overview
