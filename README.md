@@ -1,35 +1,59 @@
-# VisualTrans
+# VisualTrans：A Benchmark for Real-World Visual Transformation Reasoning
 
 <p align="center">
   <img src="assets/teaser.png" alt="VisualTrans Framework Overview" width="800"/>
 </p>
 
-A comprehensive framework for generating and evaluating visual transformation benchmarks across multiple task types including quantitative, procedural, and spatial transformation.
+[![arXiv](https://img.shields.io/badge/arXiv-2508.04043-b31b1b.svg)](http://arxiv.org/abs/2508.04043)
 
 ## Overview
 
-VisualTrans provides an end-to-end pipeline for:
-1. **Data Cleaning** - Filter and preprocess raw visual data
-2. **Meta Annotation** - Annotate metadata and extract visual features  
-3. **Question Generation** - Synthesize reasoning questions across 6 task categories
-4. **Model Evaluation** - Evaluate vision-language models and generate reports
+**📄 Paper:** [VisualTrans: A Benchmark for Real-World Visual Transformation Reasoning](http://arxiv.org/abs/2508.04043)
+
+VisualTrans is the first comprehensive benchmark specifically designed for Visual Transformation Reasoning (VTR) in real-world human-object interaction scenarios. 
+
+**Key Features:**
+- 🎯 **12 manipulation tasks** covering diverse real-world scenarios
+- 🧠 **3 reasoning dimensions**: Spatial, Procedural, and Quantitative
+- 📊 **472 high-quality QA pairs** in multiple formats
+- 🔄 **End-to-end pipeline** from data processing to evaluation
 
 
 ## Quick Start
 
 ### Prerequisites
 
-**Environment Setup:**
+**Installation:**
 ```bash
-# Create conda environment
+# Clone the repository
+git clone https://github.com/WangYipu2002/VisualTrans.git
+cd VisualTrans
+
+# Create and activate conda environment
 conda create -n VisualTrans python=3.10
 conda activate VisualTrans
 
-# Install dependencies
+# Install required dependencies
 pip install -r requirements.txt
 ```
 
-If you want to use our data synthesis pipeline to generate transformation QA data, please start from here. If you only wish to evaluate VisualTrans, you can skip directly to Step 4.
+**Model Dependencies:**
+For meta annotation and question generation, you'll need to download the Grounding DINO model:
+- Download from: [Grounding DINO Base](https://huggingface.co/IDEA-Research/grounding-dino-base)
+- Follow the model setup instructions in the respective pipeline steps
+
+### Pipeline Overview
+
+VisualTrans provides an end-to-end pipeline with four main components:
+
+1. **Data Cleaning** - Filter and preprocess raw visual data
+2. **Meta Annotation** - Annotate metadata and extract visual features using Grounding DINO
+3. **Question Generation** - Synthesize reasoning questions across 6 task categories
+4. **Model Evaluation** - Evaluate vision-language models 
+
+**Usage Options:**
+- **Full Pipeline**: Start from Step 1 to generate your own transformation QA data
+- **Evaluation Only**: Skip directly to Step 4 if you only want to evaluate models on VisualTrans
 
 ### 1. Data Cleaning
 
@@ -39,7 +63,9 @@ Configure paths in `VisualTrans/filter/filter.bash` and run:
 bash VisualTrans/filter/filter.bash
 ```
 
-### 2. Meta Annotation
+### 2. Meta Annotation 
+
+First, download the Grounding DINO model from [HuggingFace](https://huggingface.co/IDEA-Research/grounding-dino-base).
 
 Configure paths in `VisualTrans/meta_annotation/meta_annotation.bash` and run:
 
@@ -48,13 +74,14 @@ bash VisualTrans/meta_annotation/meta_annotation.bash
 ```
 
 ### 3. Question Generation
-First, download the model grounding-dino from huggingface 
-Then, Configure paths in `VisualTrans/qa_gen/qa_gen.bash` and run:
+
+Configure paths in `VisualTrans/qa_gen/qa_gen.bash` and run:
 
 ```bash
 bash VisualTrans/qa_gen/qa_gen.bash
 ```
-You can write your own script to sample a certain number of QA pairs and save them as a JSON file
+
+You can write your own script to sample a specific number of QA pairs and save them as a JSON file for evaluation.
 
 ### 4. Model Evaluation
 
@@ -97,22 +124,17 @@ IMAGE_BASE="path/to/your/image/base/dir"
 RESULT_DIR="path/to/your/result/dir"
 ```
 
-## Task Categories
-
-The framework generates questions across 6 reasoning categories:
-
-1. **Quantitative** - Counting and numerical reasoning
-2. **Procedural (Intermediate State)** - Understanding process states
-3. **Procedural (Causal Reasoning)** - Cause-effect relationships
-4. **Procedural (Transformation Planning)** - Multi-step planning
-5. **Spatial (Fine-grained)** - Precise spatial relationships
-6. **Spatial (Global)** - Overall spatial configuration
-
-
 ## Citation
 
 If you use this framework, please cite our work:
 ```bibtex
+@misc{ji2025visualtransbenchmarkrealworldvisual,
+      title={VisualTrans: A Benchmark for Real-World Visual Transformation Reasoning}, 
+      author={Yuheng Ji and Yipu Wang and Yuyang Liu and Xiaoshuai Hao and Yue Liu and Yuting Zhao and Huaihai Lyu and Xiaolong Zheng},
+      year={2025},
+      eprint={2508.04043},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.04043}, 
+}
 ```
-
-
