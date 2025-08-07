@@ -1,16 +1,16 @@
 # VisualTrans：A Benchmark for Real-World Visual Transformation Reasoning
 
+
+## Overview
+VisualTrans is the first comprehensive benchmark specifically designed for Visual Transformation Reasoning (VTR) in real-world human-object interaction scenarios. 
+
 <p align="center">
   <img src="assets/teaser.png" alt="VisualTrans Framework Overview" width="800"/>
 </p>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2508.04043-b31b1b.svg)](http://arxiv.org/abs/2508.04043)
-
-## Overview
 
 **📄 Paper:** [VisualTrans: A Benchmark for Real-World Visual Transformation Reasoning](http://arxiv.org/abs/2508.04043)
 
-VisualTrans is the first comprehensive benchmark specifically designed for Visual Transformation Reasoning (VTR) in real-world human-object interaction scenarios. 
 
 **Key Features:**
 - 🎯 **12 manipulation tasks** covering diverse real-world scenarios
@@ -21,9 +21,8 @@ VisualTrans is the first comprehensive benchmark specifically designed for Visua
 
 ## Quick Start
 
-### Prerequisites
 
-**Installation:**
+###Installation
 ```bash
 # Clone the repository
 git clone https://github.com/WangYipu2002/VisualTrans.git
@@ -37,23 +36,19 @@ conda activate VisualTrans
 pip install -r requirements.txt
 ```
 
-**Model Dependencies:**
-For meta annotation and question generation, you'll need to download the Grounding DINO model:
-- Download from: [Grounding DINO Base](https://huggingface.co/IDEA-Research/grounding-dino-base)
-- Follow the model setup instructions in the respective pipeline steps
-
 ### Pipeline Overview
 
 VisualTrans provides an end-to-end pipeline with four main components:
 
 1. **Data Cleaning** - Filter and preprocess raw visual data
-2. **Meta Annotation** - Annotate metadata and extract visual features using Grounding DINO
-3. **Question Generation** - Synthesize reasoning questions across 6 task categories
+2. **Meta Annotation** - Annotate metadata
+3. **Question Generation** - Synthesize reasoning questions and answers
 4. **Model Evaluation** - Evaluate vision-language models 
 
-**Usage Options:**
-- **Full Pipeline**: Start from Step 1 to generate your own transformation QA data
+**📌 Usage Options:**
+- **Full Pipeline**: Start from Step 1 to generate your own transformation QA data  
 - **Evaluation Only**: Skip directly to Step 4 if you only want to evaluate models on VisualTrans
+
 
 ### 1. Data Cleaning
 
