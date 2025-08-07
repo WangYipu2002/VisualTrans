@@ -22,7 +22,7 @@ VisualTrans is the first comprehensive benchmark specifically designed for Visua
 ## Quick Start
 
 
-###Installation
+### Installation
 ```bash
 # Clone the repository
 git clone https://github.com/WangYipu2002/VisualTrans.git
