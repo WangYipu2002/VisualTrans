@@ -11,6 +11,7 @@ VisualTrans is the first comprehensive benchmark specifically designed for Visua
 
 **📄 Paper:** [VisualTrans: A Benchmark for Real-World Visual Transformation Reasoning](http://arxiv.org/abs/2508.04043)
 
+**🗂️ Dataset:** [VisualTrans Benchmark Dataset](https://huggingface.co/datasets/wyp-ucas/VisualTrans) - Download benchmark data and images
 
 **Key Features:**
 - 🎯 **12 manipulation tasks** covering diverse real-world scenarios
